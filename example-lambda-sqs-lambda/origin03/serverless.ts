@@ -26,7 +26,7 @@ const serverlessConfiguration: AWS = {
           {
             Effect: "Allow",
             Action: ["sqs:SendMessage"],
-            Resource: "arn:aws:sqs:us-east-1:340044566512:RICORUDEV01", //es porque el lambda está enviando la información a una sola cola, pero puede enviar a uno o más agrupado por []
+            Resource: "${cf:origin03-dev.SQSQueueArn}", // "arn:aws:sqs:us-east-1:340044566512:RICORUDEV01", //es porque el lambda está enviando la información a una sola cola, pero puede enviar a uno o más agrupado por []
           },
         ],
       },
